@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - 2053-7</title>
+  
+  
+  
+  
+<style>
+body{
+  background-color: lightgrey;
+}
+h1 {
+  background-color: Green;
+  color: Black;
+}
+.correct{
+  background:green;
+}
+
+.incorrect{
+  background: red;
+}
+
+.close{
+  background: yellow;
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <div id="timerdiv">
+  Timer: <span id="theTimer">0</span>
+</div>
+<div style="background-image: url('https://wallpaperaccess.com/full/449895.jpg');">
+<img src="https://media.tenor.com/images/0a81b89954678ebe228e15e35044f7a5/tenor.gif" alt="This is an animated gif image, but it does not move"/>
+<h1>Spanish Vocalbulary Quiz</h1>
+<h3> Must capitalize when needed ex:Por Favor
+  <h3>
+  <ol>
+  <li>Por Favor = <input data-correct="Please" /></li>
+  <li>Gracias = <input data-correct="Thank You" /></li>
+  <li>¿Cómo se dice en español? = <input data-correct="How do you say in Spanish?" /></li>
+  <li>Silencien los micrófonos = <input data-correct="Mute yourselves" /></li>
+  <li>Prendan los micrófonos = <input data-correct="Unmute yourself" /></li>
+  <li>Pongan las cámaras = <input data-correct="Turn on your cameras" /></li>
+  <li>Apaguen las cámaras = <input data-correct="Turn off your cameras" /></li>
+  <li>No entiendo = <input data-correct="I don't understand"/></li>
+  <li>Cierren los libros= <input data-correct="Close your books" /></li>
+<li>Abran los libros = <input data-correct="Open your books"/></li>
+</ol>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  
+      <script id="rendered-js" >
+let timer = 0;
+
+function addSec(){
+  timer = timer + 1;
+  $("#theTimer").text(timer);
+}
+addSec();
+setInterval(addSec,1000);
+console.clear();
+
+$("input").change(onChange);
+
+function onChange(evt) {
+  let correct = $(this).data("correct");
+  let response = $(this).val();
+  if (correct == response) {
+    $(this).removeClass("incorrect").addClass("correct");
+  } else {
+    $(this).removeClass("correct").addClass("incorrect");
+  }
+}
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
